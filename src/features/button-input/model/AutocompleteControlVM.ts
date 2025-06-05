@@ -25,8 +25,7 @@ export class AutocompleteControlVM {
       this.suggestions = [];
     }
   
-    // ────────────────────────────────────────────────────────────────────────────
-    // Debounce (300 мс)
+  
     private debounceFetch() {
       if (this.searchTimer) clearTimeout(this.searchTimer);
       this.searchTimer = setTimeout(() => this.fetch(), 300);
@@ -40,7 +39,7 @@ export class AutocompleteControlVM {
       this.isLoading = true;
       try {
         const raw = await getCountryByName(this.value);
-        // убираем дубликаты (по name)
+       
         const unique = Array.from(new Map(raw.map((c) => [c.name, c])).values());
         runInAction(() => {
           this.suggestions = unique.slice(0, this.maxSuggestions);

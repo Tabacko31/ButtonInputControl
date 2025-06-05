@@ -5,7 +5,7 @@ import { AutocompleteControl } from "../../../features/button-input/ui/Autocompl
 import { AutocompleteControlVM } from  "../../../features/button-input/model/AutocompleteControlVM";
 
 export const HomePage: React.FC = () => {
-  // ───────────── Button control №1 ─────────────
+ 
   const [vm1] = useState(() => {
     const vm = new ButtonInputControlVM();
     vm.rightButtons = [
@@ -15,7 +15,7 @@ export const HomePage: React.FC = () => {
     return vm;
   });
 
-  // ───────────── Button control №2 ─────────────
+ 
   const [vm2] = useState(() => {
     const vm = new ButtonInputControlVM();
     vm.leftButtons = [
@@ -32,7 +32,7 @@ export const HomePage: React.FC = () => {
     return vm;
   });
 
-  // ───────────── Autocompletes ─────────────
+
   const [auto3] = useState(() => new AutocompleteControlVM(3));
   const [auto10] = useState(() => new AutocompleteControlVM(10));
 
